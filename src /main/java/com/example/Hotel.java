@@ -69,7 +69,7 @@ public class Hotel {
          
 
         for (Room room : roomsForBooking){
-            room.setOccupied(true);;
+            room.setOccupied(true);
         }
 
         return true;
