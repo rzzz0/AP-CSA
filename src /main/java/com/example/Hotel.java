@@ -44,6 +44,8 @@ public class Hotel {
                 }
             }
         }
+        
+
         ArrayList<Room> roomsForBooking = new ArrayList<Room>();
         int counter = 0;
         for (Room room : available) {
@@ -57,16 +59,14 @@ public class Hotel {
             return false;
         }
         
-        double roomPrice = 0;
+        double totalRoomPrice = 0;
         for (Room room : roomsForBooking){
-            if (room.getPrice() <= roomPrice){
-                break;
-            }
-            roomPrice = roomPrice + room.getPrice();
+            totalRoomPrice = totalRoomPrice + room.getPrice();
         }
-        if (budget < roomPrice){
+        if (budget < totalRoomPrice){
             return false;
         } 
+         
 
         for (Room room : roomsForBooking){
             room.setOccupied(true);;
