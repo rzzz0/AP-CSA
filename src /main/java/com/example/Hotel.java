@@ -5,10 +5,12 @@ import java.util.ArrayList;
 public class Hotel {
     private String name;
     private ArrayList<Room> room_list;
+    private ArrayList<Employee> employees_list;
 
     public Hotel(String name) {
         this.name = name;
         this.room_list = new ArrayList<Room>();
+        this.employees_list = new ArrayList<Employee>();
     }
 
     public String getName() {
@@ -27,6 +29,19 @@ public class Hotel {
     public void setRoom(ArrayList<Room> room) {
         this.room_list = room;
     }
+    
+    public ArrayList<Employee> getEmployees(){
+        return this.employees_list;
+    }
+    
+    public void hireEmployee(Employee employee){
+        this.employees_list.add(employee);
+    }
+    
+    public void fireEmployee(Employee employee){
+        this.employees_list.remove(employee);
+    }
+
 
     public boolean book(int no_of_ppl, double budget) {
         ArrayList<Room> available = new ArrayList<Room>();

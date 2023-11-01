@@ -1,4 +1,5 @@
 package main.java.com.example;
+import java.util.ArrayList;
 
 public class Room {
     private int occupancy;

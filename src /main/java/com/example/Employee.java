@@ -3,7 +3,7 @@ package main.java.com.example;
 public class Employee extends Person {
     private String position;
     private int id;
-    public Employee(int age, String sex, double height, String name, double weight){
+    public Employee(int age, String sex, double height, String name, double weight, int id, String position){
         super(age, sex, height, name, weight);
         this.id = id;
         this.position = position;
