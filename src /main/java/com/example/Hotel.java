@@ -20,7 +20,7 @@ public class Hotel {
 
     }
 
-    public ArrayList<Room> getRoom() {
+    public ArrayList<Room> getRooms() {
         return this.room_list;
     }
 
@@ -55,7 +55,7 @@ public class Hotel {
             roomsForBooking.add(room);
             counter = counter + room.getOccupancy();
         }
-        if (counter < no_of_ppl) {
+        if (counter <= no_of_ppl) {
             return false;
         }
         
