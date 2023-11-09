@@ -14,7 +14,7 @@ public class Room {
         this.guest_list = new ArrayList<Guest>();
     }
 
-    public ArrayList<Guest> guest_list(){
+    public ArrayList<Guest> getGuests(){
         return this.guest_list;
     }
     
@@ -22,6 +22,15 @@ public class Room {
         this.guest_list = newGuest_list;
     }
 
+    
+    
+    public void addGuest(Guest guest){
+        this.guest_list.add(guest);
+    }
+    
+    public void removeGuest(Guest guest){
+        this.guest_list.remove(guest);
+    }
 
     public int getOccupancy(){
         return this.occupancy;

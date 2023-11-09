@@ -14,4 +14,5 @@ public class Guest extends Person{
     public boolean getBreakfast(){
         return breakfast;
     }
+    
 }

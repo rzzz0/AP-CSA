@@ -43,7 +43,7 @@ public class Hotel {
     }
 
 
-    public boolean book(int no_of_ppl, double budget) {
+    public boolean book(ArrayList<Guest> guest_list, double budget) {
         ArrayList<Room> available = new ArrayList<Room>();
         for (Room room : this.room_list) {
             if (room.getOccupied() == false) {
@@ -64,13 +64,13 @@ public class Hotel {
         ArrayList<Room> roomsForBooking = new ArrayList<Room>();
         int counter = 0;
         for (Room room : available) {
-            if (counter >= no_of_ppl) {
+            if (counter >= guest_list.size()) {
                 break;
             }
             roomsForBooking.add(room);
             counter = counter + room.getOccupancy();
         }
-        if (counter <= no_of_ppl) {
+        if (counter <= guest_list.size()) {
             return false;
         }
         
@@ -82,13 +82,18 @@ public class Hotel {
             return false;
         } 
          
-
+        int guestInRoom = 0;
         for (Room room : roomsForBooking){
             room.setOccupied(true);
+            for(int i = 0; i < room.getOccupancy(); i++){
+                if (guest_list.contains(guest_list.get(guestInRoom + i))){
+                    room.addGuest(guest_list.get(guestInRoom + i));
+                    guestInRoom++;
+                }
+            }
         }
-
         return true;
-
+        
     }
 
 }
